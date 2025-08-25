@@ -1,0 +1,20 @@
+.project-tag {
+  padding: 8px 20px;
+  border-radius: 30px;
+  border: 2px solid #7f5af0;
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.project-tag:hover {
+  background: #7f5af0;
+  color: #0f111a;
+}
+
+.project-tag.selected {
+  background: #7f5af0;
+  color: #0f111a;
+}
