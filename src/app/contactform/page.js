@@ -3,23 +3,29 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import "../styles/ContactForm.css";
+
 export default function ContactForm() {
   const [messageSubmitted, setMessageSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
+
     const data = {
       email: e.target.email.value,
       subject: e.target.subject.value,
       message: e.target.message.value,
     };
+
     try {
-      const response = await fetch("http://localhost:5000/api/contact/send", {
+      // Send form data to Next.js API route
+      const response = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
       });
+
       if (response.status === 200) {
         setMessageSubmitted(true);
         e.target.reset();
@@ -42,7 +48,7 @@ export default function ContactForm() {
       <div className="contact-left">
         <h2 className="contact-title">Contact Me</h2>
         <p className="contact-text">
-         If you have any questions, ideas, or just want to say hello, feel free to reach out!
+          If you have any questions, ideas, or just want to say hello, feel free to reach out!
         </p>
 
         <div className="socials">
