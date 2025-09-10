@@ -54,7 +54,7 @@ export default function About() {
     <section id="about" className="aboutSection">
       <div className="aboutLeft">
         <Image
-          src="/images/about-image.png"
+          src="/images/selfie.png"
           width={400}
           height={400}
           alt="About Me"
