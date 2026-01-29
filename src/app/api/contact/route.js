@@ -1,12 +1,11 @@
-import { MongoClient } from "mongodb";
-
-const uri = process.env.MONGO_URI;
-const client = new MongoClient(uri);
+import nodemailer from "nodemailer";
 
 export async function POST(req) {
   try {
+   
     const { email, subject, message } = await req.json();
 
+   
     if (!email || !subject || !message) {
       return new Response(
         JSON.stringify({ error: "All fields are required" }),
@@ -14,23 +13,40 @@ export async function POST(req) {
       );
     }
 
-    await client.connect();
-    const db = client.db("portfolioDB"); 
-    const collection = db.collection("messages"); 
+   
+    const transporter = nodemailer.createTransport({
+      service: "gmail",
+      auth: {
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS,
+      },
+    });
 
-    await collection.insertOne({ email, subject, message, createdAt: new Date() });
+    
+    await transporter.sendMail({
+      from: `"Portfolio Website" <${process.env.EMAIL_USER}>`,
+      replyTo: email,
+      to: process.env.EMAIL_USER,
+      subject: `Portfolio Contact: ${subject}`,
+      text: `
+You received a new message from your portfolio website.
 
+Sender Email: ${email}
+
+Message:
+${message}
+      `,
+    });
     return new Response(
       JSON.stringify({ message: "Message sent successfully!" }),
       { status: 200 }
     );
   } catch (error) {
-    console.error(error);
+    console.error("Email error:", error);
+
     return new Response(
       JSON.stringify({ error: "Failed to send message" }),
       { status: 500 }
     );
-  } finally {
-    await client.close();
   }
 }

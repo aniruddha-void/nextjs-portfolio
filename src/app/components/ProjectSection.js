@@ -6,8 +6,7 @@ import { motion, useInView } from "framer-motion";
 import "../styles/ProjectSection.css"; 
 
 const projectsData = [
- 
-  {
+    {
     id: 1,
     title: "Movie Search App",
     description: "Any Movies you can Search by name and get details",
@@ -18,6 +17,15 @@ const projectsData = [
   },
   {
     id: 2,
+    title: "Personal Portfolio",
+    description: "My Personal portfolio website you can see my projects or you can able to contact with me",
+    image:"/images/projects/portfolio.png",
+    tag: ["All"],
+    gitUrl: "https://github.com/aniruddha-void/nextjs-portfolio.git",
+    previewUrl: "",
+  },
+  {
+    id: 3,
     title: "Nextjs Responsive Navbar",
     description: "Responsive Navbar using Next.js and css  with dark mode feature and hamburger menu",
     image:"/images/projects/navbar.png",
@@ -26,7 +34,7 @@ const projectsData = [
     previewUrl: "https://aniruddhanavbar.netlify.app/",
   },
   {
-    id: 3,
+    id: 4,
     title: "3D Solar System using Three.js",
     description: "A 3D Solar System model built with Three.js, featuring interactive planets and orbits.",
     image: "/images/projects/solar.png",
@@ -35,7 +43,7 @@ const projectsData = [
     previewUrl: "https://weather-api-jd7h.vercel.app/",
   },
   {
-    id:4,
+    id:5,
     title: "Weather App",
     description: "A weather app that fetches real-time weather data using the OpenWeatherMap API.",
     image: "/images/projects/weather.png",
@@ -44,7 +52,7 @@ const projectsData = [
     previewUrl: "https://weather-api-psi-navy.vercel.app/",
   },
   {
-   id:5,
+   id:6,
    title:"Expense Tracker",
    description:"An expense tracker app to manage your daily expenses and budget effectively",
     image:"/images/projects/expense.png",
@@ -53,7 +61,7 @@ const projectsData = [
     previewUrl:"https://expense-tracker-aniruddha.vercel.app/",
   },
   {
-    id:6,
+    id:7,
     title:"POPX UI Clone",
     description:"A responsive clone of the POPX website using React and CSS.",
     image:"/images/projects/popx.png",
@@ -62,7 +70,7 @@ const projectsData = [
     previewUrl:"https://aniruddha-popx-ui.vercel.app/",
   },
   {
-    id:7,
+    id:8,
     title:"Counter-Redux",
     description:"Simple Counter Application using React and Redux for state management.",
     image:"/images/projects/counter.png",
@@ -71,7 +79,7 @@ const projectsData = [
     previewUrl:"https://aniruddha-counter-redux.vercel.app/",
   },
   {
-    id:8,
+    id:9,
     title:"Simple Todo App",
     description:"A simple Todo application built with React to manage daily tasks.",
     image:"/images/projects/todo.png",

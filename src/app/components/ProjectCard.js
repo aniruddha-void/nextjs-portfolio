@@ -33,5 +33,5 @@ export const ProjectCard = ({ imgUrl, title, description, gitUrl, previewUrl }) 
         </div>
       </div>
     </div>
-  );
+  ); 
 };
