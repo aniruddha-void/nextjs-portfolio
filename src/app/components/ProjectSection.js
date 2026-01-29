@@ -22,7 +22,7 @@ const projectsData = [
     image:"/images/projects/portfolio.png",
     tag: ["All"],
     gitUrl: "https://github.com/aniruddha-void/nextjs-portfolio.git",
-    previewUrl: "",
+    previewUrl: "https://aniruddha-void-portfolio.vercel.app/",
   },
   {
     id: 3,
