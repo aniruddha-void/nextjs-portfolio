@@ -19,7 +19,7 @@ export const ProjectCard = ({ imgUrl, title, description, gitUrl, previewUrl }) 
         <div className="project-links">
         
           {gitUrl && (
-            <Link href={gitUrl} target="_blank">
+            <Link href={gitUrl} >
               <button className="btn">GitHub</button>
             </Link>
           )}
